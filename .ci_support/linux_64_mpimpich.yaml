@@ -9,4 +9,6 @@ cxx_compiler_version:
 docker_image:
 - condaforge/linux-anvil-comp7
 mpi:
-- openmpi
+- mpich
+target_platform:
+- linux-64
