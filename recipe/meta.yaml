@@ -19,18 +19,19 @@ build:
     - fluidsim-create-xml-description = fluidsim.base.output:run
     - fluidsim-profile = fluidsim.util.console.__main__:run_profile
     - fluidsim-test = fluidsim.util.testing:run
-  skip: true  # [win]
+  skip: true  # [win and py<36]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
   host:
     - pip
-    - python >=3.6
+    - python
     - transonic
     - setuptools_scm
     - pythran
   run:
+    - python
     - fluidfft
     - numpy >=1.15.4
     - cached-property
@@ -47,7 +48,7 @@ test:
 
 about:
   home: https://foss.heptapod.net/fluiddyn/fluidsim
-  license: CeCILL-B
+  license: LicenseRef-CeCILL
   license_file: LICENSE.txt
   summary: Framework for studying fluid dynamics with simulations.
   description: |
