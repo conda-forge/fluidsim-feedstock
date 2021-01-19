@@ -32,6 +32,7 @@ requirements:
     - pythran
   run:
     - python
+    - fluidsim-core
     - fluidfft
     - numpy >=1.15.4
     - cached-property
