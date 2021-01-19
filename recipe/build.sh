@@ -2,6 +2,7 @@
 
 cat > site.cfg <<EOF
 [environ]
+CARCH=x86-64
 
 EOF
 
