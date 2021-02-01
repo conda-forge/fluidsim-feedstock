@@ -1,9 +1,4 @@
 #!/bin/bash
 
-cat > site.cfg <<EOF
-[environ]
-CARCH=x86-64
-
-EOF
-
+export CARCH=x86-64
 $PYTHON -m pip install --no-deps --ignore-installed -vv .
