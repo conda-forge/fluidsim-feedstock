@@ -6,4 +6,4 @@ CARCH=x86-64
 
 EOF
 
-$PYTHON -m pip install --no-deps --ignore-installed -vv .[full]
+$PYTHON -m pip install --no-deps --ignore-installed -vv .
