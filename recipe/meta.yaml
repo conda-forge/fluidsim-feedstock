@@ -19,7 +19,7 @@ build:
     - fluidsim-create-xml-description = fluidsim.base.output:run
     - fluidsim-profile = fluidsim.util.console.__main__:run_profile
     - fluidsim-test = fluidsim.util.testing:run
-  skip: true  # [win or py<36]
+  skip: true  # [py<36]
 
 requirements:
   build:
@@ -45,7 +45,7 @@ test:
   imports:
     - fluidsim
   commands:
-    - fluidsim-test -v  # [not osx]
+    - fluidsim-test -v
 
 about:
   home: https://foss.heptapod.net/fluiddyn/fluidsim
