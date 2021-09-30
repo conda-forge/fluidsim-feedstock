@@ -40,6 +40,8 @@ requirements:
     - xarray
     - pandas
     - transonic
+    - pytest
+    - rich
 
 test:
   imports:
