@@ -1,5 +1,5 @@
 {% set name = "fluidsim" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.0.post0" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 60420a6e437878276b5b4f48fa43861ea3bb52181073d33491443c408feadd11
+  sha256: 508a3c33c34cbef9c28e871508bb005bda1ff91bc515ed826778c8e2ef728596
 
 build:
   number: {{ build }}
@@ -32,7 +32,8 @@ requirements:
     - pythran
   run:
     - python
-    - fluidsim-core >={{ version }}
+    # - fluidsim-core >={{ version }}
+    - fluidsim-core >=0.5.0
     - fluidfft
     - numpy >=1.15.4
     - cached-property
