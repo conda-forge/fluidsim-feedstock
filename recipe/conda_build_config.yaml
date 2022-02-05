@@ -7,3 +7,9 @@ mpi:
 pin_run_as_build:
   openmpi: x.x
   mpich: x.x
+
+channel_sources:
+  - conda-forge/label/fluidsim-core_rc,conda-forge,defaults
+
+channel_targets:
+  - conda-forge fluidsim_rc
