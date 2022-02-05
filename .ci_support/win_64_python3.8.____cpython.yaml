@@ -1,7 +1,7 @@
 channel_sources:
-- conda-forge,defaults
+- conda-forge/label/fluidsim-core_rc,conda-forge,defaults
 channel_targets:
-- conda-forge main
+- conda-forge fluidsim_rc
 cxx_compiler:
 - vs2017
 pin_run_as_build:
