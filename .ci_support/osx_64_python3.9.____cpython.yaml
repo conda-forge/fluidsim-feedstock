@@ -1,9 +1,9 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 channel_sources:
-- conda-forge,defaults
+- conda-forge/label/fluidsim-core_rc,conda-forge,defaults
 channel_targets:
-- conda-forge main
+- conda-forge fluidsim_rc
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
