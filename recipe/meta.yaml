@@ -1,5 +1,5 @@
 {% set name = "fluidsim" %}
-{% set version = "0.5.0.post0" %}
+{% set version = "0.6.0" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 508a3c33c34cbef9c28e871508bb005bda1ff91bc515ed826778c8e2ef728596
+  sha256: fcac85fc748a489c54f919eaaf27e64d132f66c8426bb8cc8e989376cd189c45
 
 build:
   number: {{ build }}
@@ -19,7 +19,7 @@ build:
     - fluidsim-create-xml-description = fluidsim.base.output:run
     - fluidsim-profile = fluidsim.util.console.__main__:run_profile
     - fluidsim-test = fluidsim.util.testing:run
-  skip: true  # [py<36]
+  skip: true  # [py<38]
 
 requirements:
   build:
@@ -32,8 +32,7 @@ requirements:
     - pythran
   run:
     - python
-    # - fluidsim-core >={{ version }}
-    - fluidsim-core >=0.5.0
+    - fluidsim-core >={{ version }}
     - fluidfft
     - numpy >=1.15.4
     - cached-property
