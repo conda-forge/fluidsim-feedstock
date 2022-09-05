@@ -44,9 +44,12 @@ requirements:
     - rich
 
 test:
+  requires:
+    - pip
   imports:
     - fluidsim
   commands:
+    - python -m pip install pytest-allclose
     - fluidsim-test -v
 
 about:
