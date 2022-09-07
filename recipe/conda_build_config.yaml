@@ -1,5 +1,0 @@
-channel_sources:
-  - conda-forge/label/fluidsim-core_rc,conda-forge,defaults
-
-channel_targets:
-  - conda-forge fluidsim_rc
