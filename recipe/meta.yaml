@@ -1,5 +1,5 @@
 {% set name = "fluidsim" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0rc0" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 619b94dbae322996929921c82545bfc561c3403eeabaafcafd74b3e8b29a7210
+  sha256: bd6ff5d03bfdcc67b7f35619d9d2a41e3676f417f29eff94cfa1d21a47470503
 
 build:
   number: {{ build }}
@@ -32,7 +32,8 @@ requirements:
     - pythran
   run:
     - python
-    - fluidsim-core >=0.6.1rc0
+    - ipython
+    - fluidsim-core >=0.7.0rc0
     - fluidfft
     - numpy >=1.15.4
     - cached-property
@@ -49,7 +50,7 @@ test:
   imports:
     - fluidsim
   commands:
-    - python -m pip install pytest-allclose
+    - python -m pip install pytest-allclose pytest-mock
     - fluidsim-test -v
 
 about:
