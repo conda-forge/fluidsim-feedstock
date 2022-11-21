@@ -3,7 +3,7 @@ cdt_name:
 channel_sources:
 - conda-forge/label/fluidsim-core_rc,conda-forge,defaults
 channel_targets:
-- conda-forge main
+- conda-forge fluidsim_rc
 cxx_compiler:
 - gxx
 cxx_compiler_version:
