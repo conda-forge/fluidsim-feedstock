@@ -1,5 +1,5 @@
 {% set name = "fluidsim" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 371faeecdfbe9b89cb9bc19fbca35266e0b24175f9caf6fff2d69504c68de3e4
+  sha256: ab85dfacd8edec9c3f1934b16df4783a212cb52373d0e75f0cfecb5e928e075a
 
 build:
   number: {{ build }}
@@ -33,7 +33,7 @@ requirements:
   run:
     - python
     - ipython
-    - fluidsim-core >=0.7.0rc0
+    - fluidsim-core >=0.7.2
     - fluidfft
     - numpy >=1.15.4
     - cached-property
