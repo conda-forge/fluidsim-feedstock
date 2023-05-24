@@ -1,11 +1,11 @@
-About fluidsim
-==============
+About fluidsim-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fluidsim-feedstock/blob/main/LICENSE.txt)
 
 Home: https://foss.heptapod.net/fluiddyn/fluidsim
 
 Package license: LicenseRef-CeCILL
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fluidsim-feedstock/blob/main/LICENSE.txt)
 
 Summary: Framework for studying fluid dynamics with simulations.
 
