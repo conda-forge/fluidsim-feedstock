@@ -19,7 +19,7 @@ build:
     - fluidsim-create-xml-description = fluidsim.base.output:run
     - fluidsim-profile = fluidsim.util.console.__main__:run_profile
     - fluidsim-test = fluidsim.util.testing:run
-  skip: true  # [py<38 or (win and py==310)]
+  skip: true  # [py<39 or (win and py==310)]
 
 requirements:
   build:
