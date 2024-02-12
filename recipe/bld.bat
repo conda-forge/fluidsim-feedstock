@@ -6,5 +6,5 @@ if %ERRORLEVEL% neq 0 exit 1
 set "CC=clang-cl"
 set "CXX=clang-cl"
 
-"%PYTHON%" -m pip install --no-deps --ignore-installed -vv .
+"%PYTHON%" -m pip install --no-deps --ignore-installed -vv . -C setup-args=-Duse-xsimd=false
 if errorlevel 1 exit 1

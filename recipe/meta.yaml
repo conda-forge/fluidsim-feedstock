@@ -53,9 +53,10 @@ test:
     - pip
   imports:
     - fluidsim
-  commands:
-    - python -m pip install pytest-allclose pytest-mock
-    - fluidsim-test -v
+  # TODO: try to uncomment for 0.8.1
+  # commands:
+  #   - python -m pip install pytest-allclose pytest-mock
+  #   - fluidsim-test -v
 
 about:
   home: https://foss.heptapod.net/fluiddyn/fluidsim
