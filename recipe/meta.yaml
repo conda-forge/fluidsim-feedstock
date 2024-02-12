@@ -13,6 +13,9 @@ source:
 build:
   number: {{ build }}
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv'
+  script_env:
+    - CC=clang-cl  # [win]
+    - CXX=clang-cl  # [win]
   entry_points:
     - fluidsim = fluidsim.util.console.__main__:run
     - fluidsim-bench = fluidsim.util.console.__main__:run_bench
@@ -33,7 +36,7 @@ requirements:
     - transonic >=0.6.1
     - pythran >=0.9.7
     # pythran code needs clang-cl on windows
-    - clang                                  # [win]
+    - clang  # [win]
   run:
     - python
     - ipython
