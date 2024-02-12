@@ -1,4 +1,10 @@
-set CARCH=x86-64
+:: check if clang-cl is on path as required
+clang-cl.exe --version
+if %ERRORLEVEL% neq 0 exit 1
 
-"%PYTHON%" -m pip install --no-deps --ignore-installed -vv .
+:: set compilers to clang-cl
+set "CC=clang-cl"
+set "CXX=clang-cl"
+
+"%PYTHON%" -m pip install --no-deps --ignore-installed -vv . -C setup-args=-Duse-xsimd=false
 if errorlevel 1 exit 1
