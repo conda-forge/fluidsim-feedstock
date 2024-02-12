@@ -27,23 +27,26 @@ requirements:
   host:
     - pip
     - python
-    - transonic
-    - setuptools_scm
-    - pythran
+    - meson-python
+    - numpy
+    - transonic >=0.6.1
+    - pythran >=0.9.7
+    # pythran code needs clang-cl on windows
+    - clang                                  # [win]
   run:
     - python
     - ipython
-    - fluidsim-core >=0.7.4
+    - transonic >=0.6.1
+    - fluidsim-core >=0.8.0
     - fluidfft
     - numpy >=1.15.4
-    - cached-property
-    - setuptools_scm
-    - xarray
+    - matplotlib-base
     - pandas
-    - transonic
+    - xarray
     - pytest
     - rich
     - importlib_metadata
+    # - cached-property
 
 test:
   requires:
