@@ -46,14 +46,13 @@ requirements:
     - pytest
     - rich
     - importlib_metadata
-    # - cached-property
 
 test:
   requires:
     - pip
   imports:
     - fluidsim
-  # TODO: try to uncomment for 0.8.1
+  # TODO: try to uncomment for >0.8.1
   # commands:
   #   - python -m pip install pytest-allclose pytest-mock
   #   - fluidsim-test -v
