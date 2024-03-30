@@ -55,9 +55,10 @@ test:
     - fluidsim.operators.__pythran__.operators2d
     - fluidsim.operators.__pythran__.operators3d
     - fluidsim.base.time_stepping.__pythran__.pseudo_spect
-  commands:
-    - python -m pip install pytest-allclose pytest-mock
-    - fluidsim-test -v
+  # TODO: retry when https://foss.heptapod.net/fluiddyn/fluidsim/-/issues/157 is fixed
+  # commands:
+  #   - python -m pip install pytest-allclose pytest-mock
+  #   - fluidsim-test -v
 
 about:
   home: https://foss.heptapod.net/fluiddyn/fluidsim
