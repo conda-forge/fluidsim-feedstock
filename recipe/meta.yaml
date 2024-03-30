@@ -1,6 +1,5 @@
 {% set name = "fluidsim" %}
 {% set version = "0.8.1" %}
-{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +10,7 @@ source:
   sha256: 44c70f388c429856f5df24705cddb2e024d7d1376d2153e113ef111af90b857b
 
 build:
-  number: {{ build }}
+  number: 1
   entry_points:
     - fluidsim = fluidsim.util.console.__main__:run
     - fluidsim-bench = fluidsim.util.console.__main__:run_bench
@@ -29,14 +28,14 @@ requirements:
     - python
     - meson-python
     - numpy
-    - transonic >=0.6.1
+    - transonic >=0.6.4
     - pythran >=0.9.7
     # pythran code needs clang-cl on windows
     - clang  # [win]
   run:
     - python
     - ipython
-    - transonic >=0.6.1
+    - transonic >=0.6.4
     - fluidsim-core >=0.8.0
     - fluidfft >=0.4.0
     - numpy >=1.15.4
@@ -52,7 +51,28 @@ test:
     - pip
   imports:
     - fluidsim
-  # TODO: try to uncomment for >0.8.1
+    # manual imports of few important Pythran extensions
+    - fluidsim.base.output.__pythran__.increments
+    - fluidsim.base.output.__pythran__.spatiotemporal_spectra
+    # A dynamic link library (DLL) initialization routine failed.
+    - fluidsim.base.time_stepping.__pythran__.pseudo_spect  # [not win]
+    - fluidsim.operators.__pythran__.operators2d
+    - fluidsim.operators.__pythran__.operators3d
+    - fluidsim.solvers.ns2d.__pythran__.solver
+    - fluidsim.solvers.ns2d.bouss.__pythran__.solver
+    - fluidsim.solvers.ns2d.output.__pythran__.spatiotemporal_spectra
+    - fluidsim.solvers.ns2d.strat.__pythran__.solver
+    - fluidsim.solvers.ns3d.forcing.__pythran__.watu
+    - fluidsim.solvers.ns3d.output.__pythran__.spatiotemporal_spectra
+    - fluidsim.solvers.ns3d.strat.__pythran__.solver
+    - fluidsim.solvers.plate2d.__pythran__.operators
+    - fluidsim.solvers.plate2d.output.__pythran__.correlations_freq
+    - fluidsim.solvers.sphere.sw1l.__pythran__.solver
+    - fluidsim.solvers.sw1l.__pythran__.operators
+    - fluidsim.solvers.sw1l.__pythran__.solver
+    - fluidsim.solvers.sw1l.output.__pythran__.base
+    - fluidsim.util.__pythran__.mini_oper_modif_resol
+  # TODO: retry when https://foss.heptapod.net/fluiddyn/fluidsim/-/issues/157 is fixed
   # commands:
   #   - python -m pip install pytest-allclose pytest-mock
   #   - fluidsim-test -v
