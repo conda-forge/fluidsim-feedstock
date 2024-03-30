@@ -52,9 +52,26 @@ test:
   imports:
     - fluidsim
     # manual imports of few important Pythran extensions
+    - fluidsim.base.output.__pythran__.increments
+    - fluidsim.base.output.__pythran__.spatiotemporal_spectra
+    # A dynamic link library (DLL) initialization routine failed.
+    - fluidsim.base.time_stepping.__pythran__.pseudo_spect  # [not win]
     - fluidsim.operators.__pythran__.operators2d
     - fluidsim.operators.__pythran__.operators3d
-    - fluidsim.base.time_stepping.__pythran__.pseudo_spect
+    - fluidsim.solvers.ns2d.__pythran__.solver
+    - fluidsim.solvers.ns2d.bouss.__pythran__.solver
+    - fluidsim.solvers.ns2d.output.__pythran__.spatiotemporal_spectra
+    - fluidsim.solvers.ns2d.strat.__pythran__.solver
+    - fluidsim.solvers.ns3d.forcing.__pythran__.watu
+    - fluidsim.solvers.ns3d.output.__pythran__.spatiotemporal_spectra
+    - fluidsim.solvers.ns3d.strat.__pythran__.solver
+    - fluidsim.solvers.plate2d.__pythran__.operators
+    - fluidsim.solvers.plate2d.output.__pythran__.correlations_freq
+    - fluidsim.solvers.sphere.sw1l.__pythran__.solver
+    - fluidsim.solvers.sw1l.__pythran__.operators
+    - fluidsim.solvers.sw1l.__pythran__.solver
+    - fluidsim.solvers.sw1l.output.__pythran__.base
+    - fluidsim.util.__pythran__.mini_oper_modif_resol
   # TODO: retry when https://foss.heptapod.net/fluiddyn/fluidsim/-/issues/157 is fixed
   # commands:
   #   - python -m pip install pytest-allclose pytest-mock
