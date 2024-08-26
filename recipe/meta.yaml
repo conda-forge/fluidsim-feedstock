@@ -10,7 +10,7 @@ source:
   sha256: eb36c2d7d588fbb088af026683a12bb14aa126bbbc91b999009130d6cb7920f9
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - fluidsim = fluidsim.util.console.__main__:run
     - fluidsim-bench = fluidsim.util.console.__main__:run_bench
@@ -18,7 +18,7 @@ build:
     - fluidsim-create-xml-description = fluidsim.base.output:run
     - fluidsim-profile = fluidsim.util.console.__main__:run_profile
     - fluidsim-test = fluidsim.util.testing:run
-  skip: true  # [py<39 or (win and py>311)]
+  skip: true  # [py<39]
 
 requirements:
   build:
