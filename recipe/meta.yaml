@@ -1,5 +1,5 @@
 {% set name = "fluidsim" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: eb36c2d7d588fbb088af026683a12bb14aa126bbbc91b999009130d6cb7920f9
+  sha256: ff3df8c2e8c96a694b5656125e778fc5f6561699bae3b264cbb75e2070b94169
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - fluidsim = fluidsim.util.console.__main__:run
     - fluidsim-bench = fluidsim.util.console.__main__:run_bench
