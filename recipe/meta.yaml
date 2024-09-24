@@ -10,7 +10,7 @@ source:
   sha256: ff3df8c2e8c96a694b5656125e778fc5f6561699bae3b264cbb75e2070b94169
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - fluidsim = fluidsim.util.console.__main__:run
     - fluidsim-bench = fluidsim.util.console.__main__:run_bench
@@ -22,17 +22,23 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - ninja                                  # [unix]
+    - pkg-config                             # [unix]
+    # pythran code needs clang-cl on windows
+    - clang                                  # [win]
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
-    - pip
     - python
+    - python-build
+    - pip
     - meson-python
     - numpy
     - transonic >=0.6.4
     - pythran >=0.9.7
-    # pythran code needs clang-cl on windows
-    - clang  # [win]
   run:
     - python
     - ipython
@@ -45,7 +51,7 @@ requirements:
     - xarray
     - pytest
     - rich
-    - importlib_metadata
+    - importlib-metadata
 
 test:
   requires:
