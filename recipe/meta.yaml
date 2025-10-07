@@ -10,7 +10,7 @@ source:
   sha256: 0cc50d969284abf26541ace3e3e328824cd3ba980d699748c4b043cbe9f29d09
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - fluidsim = fluidsim.util.console.__main__:run
     - fluidsim-bench = fluidsim.util.console.__main__:run_bench
