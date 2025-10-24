@@ -1,5 +1,5 @@
 {% set name = "fluidsim" %}
-{% set version = "0.8.4" %}
+{% set version = "0.8.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0cc50d969284abf26541ace3e3e328824cd3ba980d699748c4b043cbe9f29d09
+  sha256: 1324de081e08547b0222d3f4a9d19de1f0cb727ca162b1eaef518dc8ef4d3237
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - fluidsim = fluidsim.util.console.__main__:run
     - fluidsim-bench = fluidsim.util.console.__main__:run_bench
@@ -18,7 +18,7 @@ build:
     - fluidsim-create-xml-description = fluidsim.base.output:run
     - fluidsim-profile = fluidsim.util.console.__main__:run_profile
     - fluidsim-test = fluidsim.util.testing:run
-  skip: true  # [py<310]
+  skip: true  # [py<311]
 
 requirements:
   build:
@@ -43,7 +43,7 @@ requirements:
     - python
     - ipython
     - transonic >=0.6.4
-    - fluidsim-core >=0.8.0
+    - fluidsim-core >=0.8.5
     - fluidfft >=0.4.0
     - numpy >=1.15.4
     - matplotlib-base
