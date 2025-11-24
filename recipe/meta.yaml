@@ -43,7 +43,7 @@ requirements:
     - python
     - ipython
     - transonic >=0.6.4
-    - fluidsim-core >=0.8.5
+    - fluidsim-core ={{ version }}
     - fluidfft >=0.4.0
     - numpy >=1.15.4
     - matplotlib-base
